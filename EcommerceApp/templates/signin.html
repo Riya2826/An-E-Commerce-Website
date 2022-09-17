@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.re{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 30px;
+}
+body{
+    
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_our/20190619/ourmid/pngtree-taobao-vector-creative-technology-online-shopping-illustration-computer-finger-poster-image_131803.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+li{
+
+}
+.ne{
+    text-align:center;
+
+}
+</style>
+
+
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<body>
+    
+    <form action="signin" method="POST" >
+        {% csrf_token %}
+        
+  <div class="container re">
+    Username: <input type="text" name="username"/>
+    <br><br>
+    Password: <input type="password" name="pswd"/>
+    <br><br>
+    <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+</div>
+</form>
+<div class="ne">
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</div>
+     
+
+</body>
+
+</html> 
